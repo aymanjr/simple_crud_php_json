@@ -3,7 +3,11 @@
 
 function getUsers()
 {
-     $etudiant =   json_decode(file_get_contents(filename: __DIR__ . 'etudiant.json'));
+     $etudiant =   json_decode(file_get_contents(filename: __DIR__ . 'etudiant.json'), true);
+     echo '<pre>';
+     var_dump($etudiant);
+     echo '<pre>';
+     exit;
 }
 
 
