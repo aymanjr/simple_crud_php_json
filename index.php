@@ -6,7 +6,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Simple Crud</title>
     <!-- Font Awesome -->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
@@ -18,6 +18,7 @@
       rel="stylesheet"
     />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/0721815644.js" crossorigin="anonymous"></script>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
         crossorigin="anonymous">
@@ -33,7 +34,7 @@
     <div class="page">
 
         <div class="sidebar">
-            <div class="sidebar-header">
+            <!-- <div class="sidebar-header">
                 <div class="sidebar-logo-container">
                     <div class="logo-container">
                         <img class="logo-sidebar" src="assets/img/logo.png" />
@@ -47,17 +48,17 @@
                         </p>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="sidebar-body">
                 <ul class="navigation-list">
                     <li class="navigation-list-item">
                         <a class="navigation-link" href="/">
                             <div class="row">
                                 <div class="col-2">
-                                    <i class="fas fa-tachometer-alt"></i>
+                                    <i class="fas fa-users"></i>
                                 </div>
                                 <div class="col-9">
-                                    Dashboard
+                                    Etudiant
                                 </div>
                             </div>
                         </a>
@@ -66,10 +67,10 @@
                         <a class="navigation-link" href="/">
                             <div class="row">
                                 <div class="col-2">
-                                    <i class="fas fa-users"></i>
+                                    <i class="fas fa-graduation-cap"></i>
                                 </div>
                                 <div class="col-9">
-                                    Teams
+                                    Bultin
                                 </div>
                             </div>
                         </a>
@@ -78,52 +79,19 @@
                         <a class="navigation-link" href="/">
                             <div class="row">
                                 <div class="col-2">
-                                    <i class="fas fa-comments"></i>
+                                    <i class="fas fa-chalkboard-teacher"></i>
                                 </div>
                                 <div class="col-9">
-                                    Chat
+                                    Matiers
                                 </div>
                             </div>
                         </a>
                     </li>
-                    <li class="navigation-list-item">
-                        <a class="navigation-link" href="/">
-                            <div class="row">
-                                <div class="col-2">
-                                    <i class="fas fa-chart-pie"></i>
-                                </div>
-                                <div class="col-9">
-                                    Analytics
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="navigation-list-item">
-                        <a class="navigation-link" href="/">
-                            <div class="row">
-                                <div class="col-2">
-                                    <i class="fas fa-calendar-alt"></i>
-                                </div>
-                                <div class="col-9">
-                                    Calendar
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="navigation-list-item">
-                        <a class="navigation-link" href="/">
-                            <div class="row">
-                                <div class="col-2">
-                                    <i class="fas fa-address-book"></i>
-                                </div>
-                                <div class="col-9">
-                                    Contacts
-                                </div>
-                            </div>
-                        </a>
-                    </li>
+                    
+
+                    
                 </ul>
-                <hr style="color:rgb(255, 255, 255);margin-top:30px;">
+                <!-- <hr style="color:rgb(255, 255, 255);margin-top:30px;">
                 <div class="teams-title-container">
                     <p class="teams-title">TEAMS</p>
                 </div>
@@ -168,7 +136,7 @@
                             </div>
                         </div>
                     </li>
-                </ul>
+                </ul> -->
 
             </div>
         </div>
