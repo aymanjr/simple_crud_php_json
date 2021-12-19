@@ -7,10 +7,13 @@
     if (isset($_POST['submit'])){
         $name = test_input($_POST['nom']) ;
         $address = test_input($_POST['address']);
-        $note = test_input($_POST['note']);
+        $datenaissance = test_input($_POST['datenaissance']);
+        $email = test_input($_POST['email']);
+        $tel = test_input($_POST['tel']);
+        
         
 
-        $sql = "INSERT INTO etudiant (nom, address, note) VALUES ('$name', '$address', '$note')";
+        $sql = "INSERT INTO etudiant (nom, address, datenaissance,email,tel) VALUES ('$name', '$address','$datenaissance','$email','$tel')";
 
         if (mysqli_query($conn, $sql)) {
             $result = "un enregistrement inséré avec succès";
@@ -66,8 +69,16 @@
                         </div>
                          
                         <div class="form-group">
-                            <label for="note">Note</label>
-                            <input type="text" name="note" class="form-control" placeholder="Note" required> 
+                            <label for="datenaissance">datenaissance</label>
+                            <input type="text" name="datenaissance" class="form-control" placeholder="YYYY/MM/DD" required> 
+                        </div>
+                        <div class="form-group">
+                            <label for="email">email</label>
+                            <input type="email" name="email" class="form-control" placeholder="email" required> 
+                        </div>
+                        <div class="form-group">
+                            <label for="tel">tel</label>
+                            <input type="number" name="tel" class="form-control" placeholder="tel" required> 
                         </div>
                         
                         <div class="form-group">

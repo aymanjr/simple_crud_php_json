@@ -12,10 +12,14 @@
         $id = $_GET['id'];
         $name = $_POST['nom'] ;
         $address = $_POST['address'];
-        $note = $_POST['note']; 
+        $datenaissance = $_POST['datenaissance']; 
+        $email = $_POST['email']; 
+        $tel = $_POST['tel']; 
+
+
         
 
-        $sql = "UPDATE  etudiant  SET  nom ='$name', address ='$address', note ='$note'  WHERE id = '$id'";
+        $sql = "UPDATE  etudiant  SET  nom ='$name', address ='$address', datenaissance ='$datenaissance',email='$email',tel = '$tel'  WHERE id = '$id'";
 
         if (mysqli_query($conn, $sql)) {
             header("Location:showdata.php");
@@ -66,16 +70,34 @@
                             ?>"
                             >
                         </div>
-                         
+                      
                         <div class="form-group">
-                            <label for="note">Note</label>
-                            <input type="text" name="note" class="form-control" placeholder="note" required
+                            <label for="datenaissance">datenaissance</label>
+                            <input type="text" name="datenaissance" class="form-control" placeholder="datenaissance" required
                             value="<?=
-                                $row['note'];
+                                $row['datenaissance'];
                             ?>"
                             > 
                         </div>
+                        <div class="form-group">
+                            <label for="email">email</label>
+                            <input type="text" name="email" class="form-control" placeholder="email" required
+                            value="<?=
+                                $row['email'];
+                            ?>"
+                            > 
+                        </div>
+                        <div class="form-group">
+                            <label for="tel">tel</label>
+                            <input type="text" name="tel" class="form-control" placeholder="tel" required
+                            value="<?=
+                                $row['tel'];
+                            ?>"
+                            > 
+                        </div>
+
                         
+
                         
                         <div class="form-group">
                             <input type="submit" value="Modifer" name="submit" class="btn btn-primary btn-block" placeholder="Update"> 
