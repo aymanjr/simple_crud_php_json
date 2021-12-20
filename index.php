@@ -104,9 +104,8 @@
 
     </div>
       
-    <div class="themaincontent">
+    <div class="themaincontent" id="icontent">
       <!-- <iframe src="./etudiant/index.php" frameborder="0"></iframe> -->
-      <iframe src="./etudiant/index.php" onload='javascript:(function(o){o.style.height=o.contentWindow.document.body.scrollHeight+"px";}(this));' ></iframe>
 
     </div>
     
@@ -121,21 +120,54 @@
       document.getElementById("sidebarToggle").classList.toggle("active");
     });
 
-
+     
+    var showiframe;
 
     function showmatier() {
-      document.getElementById('theheadtitle').innerHTML = "";
-      document.getElementById('theheadtitle').innerHTML = "Matiers";
+
+      if(showiframe = false){
+        document.getElementById('theheadtitle').innerHTML = "Matiers";
+        showiframe = true;
+      }else if(showiframe = true){
+        document.getElementById('icontent').innerHTML = `  `;
+        document.getElementById('theheadtitle').innerHTML = "";
+        document.getElementById('theheadtitle').innerHTML = "Matiers";
+      }
+      showiframe = false;
+      
     };
 
     function showetudiant() {
+      if(showiframe = false){
+        document.getElementById('theheadtitle').innerHTML = "Etudiant";
+      document.getElementById('icontent').innerHTML = `     <iframe src="./etudiant/index.php" onload='javascript:(function(o){o.style.height=o.contentWindow.document.body.scrollHeight+"px";}(this));' ></iframe> `;
+       showiframe = true;
+      }else if(showiframe = true){
+        document.getElementById('icontent').innerHTML = `  `;
       document.getElementById('theheadtitle').innerHTML = "";
       document.getElementById('theheadtitle').innerHTML = "Etudiant";
+      document.getElementById('icontent').innerHTML = `     <iframe src="./etudiant/index.php" onload='javascript:(function(o){o.style.height=o.contentWindow.document.body.scrollHeight+"px";}(this));' ></iframe> `;
+      showiframe = true;
+
+      }
+      showiframe = false;
+    
+   
     };
 
     function showbultin() {
+      if(showiframe = false){
+        document.getElementById('theheadtitle').innerHTML = "Bultin";
+        showiframe=true;
+      }else if(showiframe = true){
+    
       document.getElementById('theheadtitle').innerHTML = "";
+      document.getElementById('icontent').innerHTML = `  `;
       document.getElementById('theheadtitle').innerHTML = "Bultin";
+
+      }
+      showiframe = false;
+
     };
   </script>
 
