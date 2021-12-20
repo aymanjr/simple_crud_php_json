@@ -127,11 +127,15 @@
 
       if(showiframe = false){
         document.getElementById('theheadtitle').innerHTML = "Matiers";
+        document.getElementById('icontent').innerHTML = `     <iframe src="./MATIERS/index.php" onload='javascript:(function(o){o.style.height=o.contentWindow.document.body.scrollHeight+"px";}(this));' ></iframe> `;
+
         showiframe = true;
       }else if(showiframe = true){
         document.getElementById('icontent').innerHTML = `  `;
         document.getElementById('theheadtitle').innerHTML = "";
         document.getElementById('theheadtitle').innerHTML = "Matiers";
+        document.getElementById('icontent').innerHTML = `     <iframe src="./MATIERS/index.php" onload='javascript:(function(o){o.style.height=o.contentWindow.document.body.scrollHeight+"px";}(this));' ></iframe> `;
+
       }
       showiframe = false;
       

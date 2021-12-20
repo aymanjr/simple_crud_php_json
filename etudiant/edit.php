@@ -1,6 +1,6 @@
 <?php
 
-    include "./configdata.php";
+    include ".//configdata.php";
 
     $id=$_GET["id"];
 

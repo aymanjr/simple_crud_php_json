@@ -115,6 +115,7 @@ body.active .page .content {
   height: auto;
 }
 
+
 .brand-name {
   color: white;
   margin: 0px;
@@ -124,7 +125,7 @@ body.active .page .content {
   font-family: "Roboto", sans-serif;
 }
 iframe {
-  height: 80%;
+  height: 100%;
   width: 80%;
   border: none;
   overflow: hidden;

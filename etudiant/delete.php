@@ -1,6 +1,6 @@
 <?php 
     
-    include "./configdata.php";
+    include ".//configdata.php";
     $id=$_GET["id"];
 
     $sql = "DELETE FROM etudiant WHERE id = '$id'";
