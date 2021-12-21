@@ -72,11 +72,11 @@
                                 <tr class="text-center">
                                     <td><?= $row['id']; ?></td>
                                     <td><?= $row['nom']; ?></td>
-                                    <td><input type="number"></td>
+                                    <td><input type="number" for="note"></td>
                             
 
 
-                                    <td><a class="btn btn-info" href="edit.php?id=<?= $row['id']; ?>">ADD</a></td>
+                                    <td><a class="btn btn-info" href="note.php?id=<?= $row['id'];?>,nom=<?=$row['nom'];?>">ADD</a></td>
                                 </tr>
                         <?php }
                         } ?>

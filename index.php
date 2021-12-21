@@ -137,10 +137,12 @@
         document.getElementById('icontent').innerHTML = `     <iframe src="./MATIERS/index.php" onload='javascript:(function(o){o.style.height=o.contentWindow.document.body.scrollHeight+"px";}(this));' ></iframe> `;
 
       }
+
       showiframe = false;
       
     };
-
+    
+    
     function showetudiant() {
       if(showiframe = false){
         document.getElementById('theheadtitle').innerHTML = "Etudiant";
