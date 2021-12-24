@@ -37,6 +37,7 @@ include './configdata.php'
         while ($row  = mysqli_fetch_array($result)) {
 
             echo "<option>$row[nom_matier]</option>";
+            
         }
         echo "</select>";
         echo "</center>";
