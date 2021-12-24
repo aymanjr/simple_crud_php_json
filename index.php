@@ -146,13 +146,13 @@
     function showetudiant() {
       if(showiframe = false){
         document.getElementById('theheadtitle').innerHTML = "Etudiant";
-      document.getElementById('icontent').innerHTML = `     <iframe src="./etudiant/index.php"  ></iframe> `;
+      document.getElementById('icontent').innerHTML = `     <iframe src="./etudiant/index.php" onload='javascript:(function(o){o.style.height=o.contentWindow.document.body.scrollHeight+"px";}(this));' ></iframe> `;
        showiframe = true;
       }else if(showiframe = true){
         document.getElementById('icontent').innerHTML = `  `;
       document.getElementById('theheadtitle').innerHTML = "";
       document.getElementById('theheadtitle').innerHTML = "Etudiant";
-      document.getElementById('icontent').innerHTML = `     <iframe src="./etudiant/index.php" ></iframe> `;
+      document.getElementById('icontent').innerHTML = `     <iframe src="./etudiant/index.php" onload='javascript:(function(o){o.style.height=o.contentWindow.document.body.scrollHeight+"px";}(this));' ></iframe> `;
       showiframe = true;
 
       }
@@ -164,12 +164,15 @@
     function showbultin() {
       if(showiframe = false){
         document.getElementById('theheadtitle').innerHTML = "Bultin";
+        document.getElementById('icontent').innerHTML = `     <iframe src="./Bultin/index.php" onload='javascript:(function(o){o.style.height=o.contentWindow.document.body.scrollHeight+"px";}(this));' ></iframe> `;
         showiframe=true;
       }else if(showiframe = true){
     
       document.getElementById('theheadtitle').innerHTML = "";
       document.getElementById('icontent').innerHTML = `  `;
       document.getElementById('theheadtitle').innerHTML = "Bultin";
+      document.getElementById('icontent').innerHTML = `     <iframe src="./Bultin/index.php" onload='javascript:(function(o){o.style.height=o.contentWindow.document.body.scrollHeight+"px";}(this));' ></iframe> `;
+      showiframe = true;
 
       }
       showiframe = false;

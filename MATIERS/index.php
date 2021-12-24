@@ -1,6 +1,6 @@
 <?php
 
-include './configdata.php'
+    include './configdata.php'
 
 ?>
 <!doctype html>
@@ -25,23 +25,22 @@ include './configdata.php'
 <body class="" style=" background: linear-gradient(
 35deg, #66fcf1, #45a29e);
    ">
-
+    
 
     <div class="container">
         <?php
-        $result = mysqli_query($conn, "SELECT * FROM `matier`  ");
-        echo "<center>";
-        echo "<hr/>";
-        echo "<select id='rech'>";
-        echo "<option>-- Recherche Matier par Nom</option>";
-        while ($row  = mysqli_fetch_array($result)) {
+          $result = mysqli_query($conn, "SELECT * FROM `matier`  ");
+           echo"<center>";
+           echo"<hr/>";
+           echo"<select id='rech'>";
+           echo"<option>-- Recherche Matier par Nom</option>";
+           while($row  = mysqli_fetch_array($result)){
 
-            echo "<option>$row[nom_matier]</option>";
-            
-        }
-        echo "</select>";
-        echo "</center>";
-
+            echo"<option>$row[nom_matier]</option>";
+           }
+           echo"</select>";
+          echo"</center>";
+         
 
 
         ?>
@@ -67,29 +66,17 @@ include './configdata.php'
 
                         if (mysqli_num_rows($result) > 0) {
                             while ($row = mysqli_fetch_assoc($result)) {
-
+                      
                         ?>
 
                                 <tr class="text-center">
                                     <td><?= $row['id']; ?></td>
                                     <td><?= $row['nom']; ?></td>
-                                    <td><input type="number" for="note" id="lanote"></td>
+                                    <td><input type="number" for="note"></td>
+                            
 
 
-                                    <td><a class="btn btn-info" >ADD</a></td>
-
-                                    <script>
-                                        $("#btn").click(function() {
-                                            var id = $row['id'];
-                                            var matiernom = document.getElementById("rech");
-                                            var matiernom = e.options[e.selectedIndex].text;
-                                            var note = $("#lanote");
-
-                                             alert(matiernom);
-
-                                        });
-                                    </script>
-
+                                    <td><a class="btn btn-info" href="note.php?id=<?= $row['id'];?>,nom=<?=$row['nom'];?>">ADD</a></td>
                                 </tr>
                         <?php }
                         } ?>
@@ -112,7 +99,7 @@ include './configdata.php'
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js" integrity="sha512-rMGGF4wg1R73ehtnxXBt5mbUfN9JUJwbk21KMlnLZDJh7BkPmeovBuddZCENJddHYYMkCh9hPFnPmS9sspki8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css" integrity="sha512-yVvxUQV0QESBt1SyZbNJMAwyKvFTLMyXSyBHDO4BG5t7k/Lw34tyqlSDlKIrIENIzCl+RVUNjmCPG+V/GMesRw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
     <script>
         $("#rech").chosen();
     </script>
