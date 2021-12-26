@@ -33,10 +33,11 @@ include './configdata.php'
             echo "<center>";
             echo "<hr/>";
             echo "<select id='rech'>";
-            echo "<option>-- Recherche Matier par Nom</option>";
+            echo "<option value=''>-- Recherche Matier par Nom</option>";
+
             while ($row  = mysqli_fetch_array($result)) {
 
-                echo "<option value='$row[id_matier]' name='rech' >$row[nom_matier]</option>";
+                echo "<option value='$row[id_matier]'   >$row[nom_matier]</option>";
             }
             echo "</select>";
             echo "</center>";
@@ -75,7 +76,7 @@ include './configdata.php'
                                         <td><input type="number" for="note" name="note_a" id="note_a"></td>
 
 
-                                        <td><a class="btn btn-info" onclick="senddata()" href="note.php?id=<?= $row['id']; ?>">ADD</a></td>
+                                        <td><input class="btn btn-info" onclick="on_submit()"  href="note.php?id=<?= $row['id']; ?> " id="submit" type="submit" name="submit" value="submit" > </td>
 
 
 
@@ -94,6 +95,7 @@ include './configdata.php'
             </div>
         </div>
 
+        <!-- <input id="submit" type="submit" name="submit" value="submit" > -->
 
 
         <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
@@ -119,7 +121,7 @@ include './configdata.php'
             = $_POST['note_a'];
 
         ?>
-
+        <!-- 
         <script>
             $("#rech").chosen();
 
@@ -139,7 +141,7 @@ include './configdata.php'
                
 
             }
-        </script>
+        </script> -->
     </form>
 
 </body>
