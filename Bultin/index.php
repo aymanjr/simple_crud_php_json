@@ -21,11 +21,7 @@ include './/configdata.php'
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
     <title>Bultin Etudiant</title>
-
-<<<<<<< Updated upstream
-   
-=======
->>>>>>> Stashed changes
+    
     <script>
         function recherche(){
             var input, filter, table, tr, td, i, txtValue;
@@ -43,38 +39,22 @@ include './/configdata.php'
                     tr[i].style.display = "";
                 } else {
                     tr[i].style.display = "none";
-<<<<<<< Updated upstream
-                } 
-                }
-            }
-        }
-=======
                 }
                 }
             }
-
         }
 
-
->>>>>>> Stashed changes
     </script>
 </head>
 
 <body class="" style=" background: linear-gradient(
 35deg, #66fcf1, #45a29e);
    ">
-<<<<<<< Updated upstream
     
     <div class="form-group">
     <input type="number" name="id_rech" onkeyup="recherche();"  id="id_rech" class="form-control" placeholder="Entrer l'id d'etudiant" /> 
+    <input type="button" onclick="recherche();" value="rech"/>
 </div>
-=======
-    <div class="form-group">
-    <input type="number" name="id_rech" onkeyup="recherche();" class="form-control" placeholder="Entrer l'id d'etudiant" /> 
-</div>
-    
-
->>>>>>> Stashed changes
 
     <div class="container">
         <div class="row">
