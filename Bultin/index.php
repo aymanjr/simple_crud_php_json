@@ -21,16 +21,63 @@ include './/configdata.php'
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
     <title>Bultin Etudiant</title>
+
+   
+    <script>
+        function recherche(){
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("id_rech");
+            filter = input.value.toUpperCase();
+             table = document.getElementById("etudiant_table");
+             tr = table.getElementsByTagName("tr");
+
+    // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+                }
+            }
+        }
+
+        function CountRows() {
+        var totalRowCount = 0;
+        var rowCount = 0;
+        var table = document.getElementById("etudiant_table");
+        var rows = table.getElementsByTagName("tr")
+        for (var i = 0; i < rows.length; i++) {
+            totalRowCount++;
+            if (rows[i].getElementsByTagName("td").length > 0) {
+                rowCount++;
+            }
+        }
+        var message = "Total Row Count: " + totalRowCount;
+        message += "\nRow Count: " + rowCount;
+        alert(message);
+    }
+    </script>
 </head>
 
 <body class="" style=" background: linear-gradient(
 35deg, #66fcf1, #45a29e);
    ">
+    
+    <div class="form-group">
+    <input type="number" name="id_rech" onkeyup="recherche();"  id="id_rech" class="form-control" placeholder="Entrer l'id d'etudiant" /> 
+    <input type="button" onclick="recherche();" value="rech"/>
+</div>
+
     <div class="container">
         <div class="row">
             <div class="col-lg-10 offset mt-3">
-                <table class="table table-striped table-bordered bg-light">
-                    <thead>
+                <table class="table table-striped table-bordered bg-light" id="etudiant_table">
+                    <thead> 
+                        
                         <tr class="bg-dark text-light text-center">
                             <th>ID</th>
                             <th>NOM COMPLET</th>
@@ -40,7 +87,7 @@ include './/configdata.php'
                     </thead>
                     <tbody>
                     <?php
-                        $sql = "SELECT `etudiant`.`id`, `etudiant`.`nom`, `matier`.`nom_matier`, `note`.`note` FROM `etudiant`, `matier` ,`note` WHERE `matier`.`id_matier` = `note`.`id_matier_f` AND `etudiant`.`id`=`note`.`id_etd_f`";
+                        $sql = "SELECT distinct( `etudiant`.`id` ) ,`etudiant`.`nom`, `matier`.`nom_matier`, `note`.`note`  FROM `etudiant`, `matier`,`note`";
                         $result = mysqli_query($conn, $sql);
 
                         if (mysqli_num_rows($result) > 0) {
