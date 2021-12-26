@@ -1,0 +1,14 @@
+
+CREATE VIEW NoteMath as
+SELECT e.id,m.nom_matier,note  from etudiant e,matier m,note n
+where e.id=n.id_etd_f and m.id_matier=n.id_matier_f AND m.nom_matier ='math';
+
+CREATE VIEW NotePhysisque as
+SELECT e.id,m.nom_matier,note  from etudiant e,matier m,note n
+where e.id=n.id_etd_f and m.id_matier=n.id_matier_f AND m.nom_matier ='physique';
+
+
+
+
+SELECT e.id,nom ,mt.note AS Math,ph.note as Physique from etudiant e,noteMath mt,NotePhysisque ph WHERE
+e.id = mt.id and e.id = ph.id;
