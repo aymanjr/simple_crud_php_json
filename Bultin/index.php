@@ -40,7 +40,7 @@ include './/configdata.php'
                     </thead>
                     <tbody>
                     <?php
-                        $sql = "SELECT `etudiant`.`nom`, `matier`.`nom_matier`, `note`.`note` FROM `etudiant` , `matier`  LEFT JOIN `note` ON `note`.`id_etd_f` = `etudiant`.`id`;";
+                        $sql = "SELECT distinct( `etudiant`.`id` ) ,`etudiant`.`nom`, `matier`.`nom_matier`, `note`.`note`  FROM `etudiant`, `matier`,`note`";
                         $result = mysqli_query($conn, $sql);
 
                         if (mysqli_num_rows($result) > 0) {
