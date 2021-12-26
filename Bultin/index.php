@@ -40,7 +40,7 @@ include './/configdata.php'
                     </thead>
                     <tbody>
                     <?php
-                        $sql = "SELECT distinct( `etudiant`.`id` ) ,`etudiant`.`nom`, `matier`.`nom_matier`, `note`.`note`  FROM `etudiant`, `matier`,`note`";
+                        $sql = "SELECT `etudiant`.`id`, `etudiant`.`nom`, `matier`.`nom_matier`, `note`.`note` FROM `etudiant`, `matier` ,`note` WHERE `matier`.`id_matier` = `note`.`id_matier_f` AND `etudiant`.`id`=`note`.`id_etd_f`";
                         $result = mysqli_query($conn, $sql);
 
                         if (mysqli_num_rows($result) > 0) {
