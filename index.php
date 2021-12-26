@@ -68,7 +68,7 @@
               </div>
             </a>
           </li>
-          <li class="navigation-list-item active">
+          <li class="navigation-list-item ">
             <a class="navigation-link" href="#" onclick="showmatier()">
               <div class="row">
                 <div class="col-2">

@@ -26,7 +26,7 @@ include './configdata.php'
 35deg, #66fcf1, #45a29e);
    ">
 
-    <form name="form" action="" method="post">
+    <form name="form" action="note.php" method="post">
         <div class="container">
             <?php
             $result = mysqli_query($conn, "SELECT * FROM `matier`  ");
@@ -36,7 +36,7 @@ include './configdata.php'
             echo "<option>-- Recherche Matier par Nom</option>";
             while ($row  = mysqli_fetch_array($result)) {
 
-                echo "<option value='$row[id_matier]' >$row[nom_matier]</option>";
+                echo "<option value='$row[id_matier]' name='rech' >$row[nom_matier]</option>";
             }
             echo "</select>";
             echo "</center>";
@@ -68,22 +68,16 @@ include './configdata.php'
                                 while ($row = mysqli_fetch_assoc($result)) {
 
                             ?>
-                                
+
                                     <tr class="text-center">
-                                        <td><?= $row['id']; ?> <input type="hidden" id="id_etd" value="<?= $row['id']; ?>"></td>
+                                        <td><?= $row['id']; ?> <input type="hidden" id="id_etd" name="id_etd" value="<?= $row['id']; ?>"></td>
                                         <td><?= $row['nom']; ?></td>
-                                        <td><input type="number" for="note" name="nt" id="note_a"></td>
+                                        <td><input type="number" for="note" name="note_a" id="note_a"></td>
 
 
-                                        <td><a class="btn btn-info" href="note.php?id=<?= $row['id']; ?>">ADD</a></td>
+                                        <td><a class="btn btn-info" onclick="senddata()" href="note.php?id=<?= $row['id']; ?>">ADD</a></td>
 
-                                        <?
 
-                                        $id_etd = $row['id'];
-                                        $lanote =  $_POST['nt'];
-
-                                        
-                                        ?>
 
 
                                     </tr>
@@ -91,7 +85,7 @@ include './configdata.php'
                             } ?>
                         </tbody>
                     </table>
-        
+
 
                     <div class="form-group text-center">
                         <!-- <a class="btn btn-warning text-center" href="showdata.php">Ajouter nouvel Etudiant</a> -->
@@ -109,18 +103,45 @@ include './configdata.php'
         <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js" integrity="sha512-rMGGF4wg1R73ehtnxXBt5mbUfN9JUJwbk21KMlnLZDJh7BkPmeovBuddZCENJddHYYMkCh9hPFnPmS9sspki8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css" integrity="sha512-yVvxUQV0QESBt1SyZbNJMAwyKvFTLMyXSyBHDO4BG5t7k/Lw34tyqlSDlKIrIENIzCl+RVUNjmCPG+V/GMesRw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+
+        <?
+
+        // $id_mat =  $_POST["rech"];
+        // $id_etd =  $_POST["id_etd"];
+        // $note_a =  $_POST["note_a"];
+
+        $_SESSION['rech'] = $_POST['rech'];
+
+        $_SESSION['id_etd']
+            = $_POST['id_etd'];
+
+        $_SESSION['note_a']
+            = $_POST['note_a'];
+
+        ?>
+
         <script>
             $("#rech").chosen();
-              
-            var id_mat = document.getElementById('rech').value;
-            var id_etd = document.getElementById('id_etd').value;
-            var note_a = document.getElementById('note_a').value;
 
 
+            function senddata() {
 
+                var id_mat = document.getElementById('rech').value;
+                var id_etd = document.getElementById('id_etd').value;
+                var note_a = document.getElementById('note_a').value;
+
+                localStorage.setItem("id_mat", id_mat );
+                localStorage.setItem("id_etd", id_etd );
+                localStorage.setItem("note_a", note_a );
+
+                
+                window.location.href = "note.php";
+               
+
+            }
         </script>
     </form>
-       
+
 </body>
 
 </html>
