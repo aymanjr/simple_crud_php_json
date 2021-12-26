@@ -40,26 +40,10 @@ include './/configdata.php'
                     tr[i].style.display = "";
                 } else {
                     tr[i].style.display = "none";
-                }
+                } 
                 }
             }
         }
-
-        function CountRows() {
-        var totalRowCount = 0;
-        var rowCount = 0;
-        var table = document.getElementById("etudiant_table");
-        var rows = table.getElementsByTagName("tr")
-        for (var i = 0; i < rows.length; i++) {
-            totalRowCount++;
-            if (rows[i].getElementsByTagName("td").length > 0) {
-                rowCount++;
-            }
-        }
-        var message = "Total Row Count: " + totalRowCount;
-        message += "\nRow Count: " + rowCount;
-        alert(message);
-    }
     </script>
 </head>
 
@@ -69,7 +53,6 @@ include './/configdata.php'
     
     <div class="form-group">
     <input type="number" name="id_rech" onkeyup="recherche();"  id="id_rech" class="form-control" placeholder="Entrer l'id d'etudiant" /> 
-    <input type="button" onclick="recherche();" value="rech"/>
 </div>
 
     <div class="container">
