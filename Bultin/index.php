@@ -53,7 +53,6 @@ include './/configdata.php'
     
     <div class="form-group">
     <input type="number" name="id_rech" onkeyup="recherche();"  id="id_rech" class="form-control" placeholder="Entrer l'id d'etudiant" /> 
-    <input type="button" onclick="recherche();" value="rech"/>
 </div>
 
     <div class="container">
@@ -65,13 +64,13 @@ include './/configdata.php'
                         <tr class="bg-dark text-light text-center">
                             <th>ID</th>
                             <th>NOM COMPLET</th>
-                            <th>MATIER</th>
-                            <th>NOTE</th>
+                            <th>MATH</th>
+                            <th>PHYSIQUE</th>
                         </tr>
                     </thead>
                     <tbody>
                     <?php
-                        $sql = "SELECT `etudiant`.`id`, `etudiant`.`nom`, `matier`.`nom_matier`, `note`.`note` FROM `etudiant`, `matier` ,`note` WHERE `matier`.`id_matier` = `note`.`id_matier_f` AND `etudiant`.`id`=`note`.`id_etd_f`";
+                        $sql = "SELECT e.id,nom ,mt.note math,ph.note ph from etudiant e,noteMath mt,NotePhysisque ph WHERE e.id = mt.id and e.id = ph.id;";
                         $result = mysqli_query($conn, $sql);
 
                         if (mysqli_num_rows($result) > 0) {
@@ -82,8 +81,8 @@ include './/configdata.php'
                                 <tr class="text-center">
                                     <td><?= $row['id']; ?></td>
                                     <td><?= $row['nom']; ?></td>
-                                    <td><?= $row['nom_matier']; ?></td>
-                                    <td><?= $row['note']; ?></td>
+                                    <td><?= $row['math']; ?></td>
+                                    <td><?= $row['ph']; ?></td>
                                     
                                 </tr>
                         <?php }
