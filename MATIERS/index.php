@@ -40,9 +40,7 @@ include './configdata.php'
                 echo "<option value='$row[id_matier]'   >$row[nom_matier]</option>";
             }
             echo "</select>";
-            echo "</center>";
-
-
+            echo "</center>"
 
             ?>
 
@@ -76,7 +74,7 @@ include './configdata.php'
                                         <td><input type="number" for="note" name="note_a" id="note_a"></td>
 
 
-                                        <td><input class="btn btn-info" onclick="on_submit()"  href="note.php?id=<?= $row['id']; ?> " id="submit" type="submit" name="submit" value="submit" > </td>
+                                        <td><input class="btn btn-info" onclick="on_submit()" href="note.php?id=<?= $row['id']; ?> " id="submit" type="submit" name="submit" value="submit"> </td>
 
 
 
