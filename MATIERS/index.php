@@ -52,9 +52,6 @@ include './configdata.php'
                                 <th>ID</th>
                                 <th>NOM & PRENOM</th>
                                 <th>Note :</th>
-
-
-
                                 <th>EDIT</th>
                             </tr>
                         </thead>
