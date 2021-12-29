@@ -40,7 +40,8 @@ include './configdata.php'
                 echo "<option value='$row[id_matier]'   >$row[nom_matier]</option>";
             }
             echo "</select>";
-            echo "</center>"
+            echo "</center>";
+            
 
             ?>
 
