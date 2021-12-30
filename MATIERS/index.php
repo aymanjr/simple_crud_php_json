@@ -33,7 +33,8 @@ include './configdata.php'
             echo "<center>";
             echo "<hr/>";
             echo "<select id='rech'>";
-            echo "<option value=''>-- Recherche Matier par Nom</option>";
+
+            echo "<option value=''>-- Recherche Matier  par Nom</option>";
 
             while ($row  = mysqli_fetch_array($result)) {
 
